@@ -16,6 +16,9 @@
     width: 100%;
     background-color: #aaa;
     font-family: 'Press Start 2P', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #teclado{
     width: 80%;

@@ -3,19 +3,19 @@ const pantallaCalculadora=document.getElementById('pantalla');
 
 
 botones.forEach(boton => {
-   boton.onclick=(e)=>{
+    boton.onclick=(e)=>{
         if (boton.id==='C'){
             pantallaCalculadora.textContent='0';
             return;
         }
         if (boton.id==='igual'){
             try {
-                pantallaCalculadora.textContent=eval(pantallaCalculadora.textContent);
-                if(isNaN(pantallaCalculadora.textContent)){
-                    throw new Error("No se puede calcular letras");
+                pantallaCalculadora.textContent = eval(pantallaCalculadora.textContent);
+                if (isNaN(pantallaCalculadora.textContent)) {
+                    throw new Error();
                 }
-            } catch (error) {
-                pantallaCalculadora.textContent="Error"+error;
+            } catch {
+                pantallaCalculadora.textContent = "Error";
             }
             
             return;

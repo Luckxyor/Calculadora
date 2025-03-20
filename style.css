@@ -2,7 +2,7 @@
 
 #calculadora{
     height: 50vh;
-    width: 20vw;
+    width: 18vw;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -21,13 +21,26 @@
     justify-content: center;
 }
 #teclado{
-    width: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.numeros{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+.simbolos{
+    display: flex;
+    flex-direction: column;
+}
 button{
     width: 80px;
     height: 40px;
-    margin: 10px;
+    margin: 10px 0;
+    background-color: #ffffff00;
+    border: none;
+}
+button:hover{
+    background-color: #ccc;
 }

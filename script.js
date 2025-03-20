@@ -1,42 +1,29 @@
-const teclaNumerica=document.getElementsByClassName('teclaNum');
+const botones=document.querySelectorAll('.btn');
 const pantallaCalculadora=document.getElementById('pantalla');
 
-Array.from(teclaNumerica).forEach(element => {
-   element.onclick=(e)=>{
-        switch (e.target.innerHTML) {
-            case '1':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '2':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '3':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '4':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '5':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '6':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '7':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '8':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '9':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            case '0':
-                pantallaCalculadora.innerHTML+=e.target.innerHTML
-                break;
-            default:
-                let num1=parseInt(pantallaCalculadora.innerHTML);
-                break;
+
+botones.forEach(boton => {
+   boton.onclick=(e)=>{
+        if (boton.id==='C'){
+            pantallaCalculadora.textContent='0';
+            return;
         }
-    } 
+        if (boton.id==='igual'){
+            try {
+                pantallaCalculadora.textContent=eval(pantallaCalculadora.textContent);
+                if(isNaN(pantallaCalculadora.textContent)){
+                    throw new Error("No se puede calcular letras");
+                }
+            } catch (error) {
+                pantallaCalculadora.textContent="Error"+error;
+            }
+            
+            return;
+        }
+        if (pantallaCalculadora.textContent==='0' && e.target.textContent!='.'){
+            pantallaCalculadora.textContent=e.target.textContent;
+        }else{
+            pantallaCalculadora.textContent+=e.target.textContent;
+        }
+} 
 });

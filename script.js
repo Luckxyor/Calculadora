@@ -20,7 +20,7 @@ botones.forEach(boton => {
             
             return;
         }
-        if (pantallaCalculadora.textContent==='0' && e.target.textContent!='.'){
+        if (pantallaCalculadora.textContent==='0' && e.target.textContent!='.' || pantallaCalculadora.textContent==='Error'){
             pantallaCalculadora.textContent=e.target.textContent;
         }else{
             pantallaCalculadora.textContent+=e.target.textContent;

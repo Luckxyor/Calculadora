@@ -4,6 +4,7 @@ const pantallaCalculadora=document.getElementById('pantalla');
 
 botones.forEach(boton => {
     boton.onclick=(e)=>{
+        pantallaCalculadora.style.color='white';
         if (boton.id==='C'){
             pantallaCalculadora.textContent='0';
             return;
@@ -14,10 +15,18 @@ botones.forEach(boton => {
                 if (isNaN(pantallaCalculadora.textContent)) {
                     throw new Error();
                 }
+                else if(pantallaCalculadora.textContent>0){
+                    pantallaCalculadora.style.color='green';
+                }
+                else if(pantallaCalculadora.textContent<0){
+                    pantallaCalculadora.style.color='red';
+                }
+                else{
+                    
+                }
             } catch {
                 pantallaCalculadora.textContent = "Error";
             }
-            
             return;
         }
         if (pantallaCalculadora.textContent==='0' && e.target.textContent!='.' || pantallaCalculadora.textContent==='Error'){

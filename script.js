@@ -21,9 +21,6 @@ botones.forEach(boton => {
                 else if(pantallaCalculadora.textContent<0){
                     pantallaCalculadora.style.color='red';
                 }
-                else{
-                    
-                }
             } catch {
                 pantallaCalculadora.textContent = "Error";
             }
